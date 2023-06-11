@@ -17,7 +17,7 @@ public class EmailService {
 		mailMessage.setSubject(subject);
 		mailMessage.setText(message);
 
-		mailMessage.setFrom("vitocangiano@virgilio.it");
+		mailMessage.setFrom("");
 
 		javaMailSender.send(mailMessage);
 	}
