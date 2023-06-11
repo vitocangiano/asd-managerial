@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>User Registration</title>
+<style type="text/css">
+    label {
+        display: inline-block;
+        width: 200px;
+        margin: 5px;
+        text-align: left;
+    }
+    input[type=text], input[type=password], select {
+        display: inline-block;
+        width: 200px;
+    }
+    input[type=radio] {
+        margin-left: 45px;
+    }
+    input[type=checkbox] {
+        margin-right: 190px;
+    }  
+    button {
+        padding: 5px;
+        margin: 10px;
+    }
+</style>
+</head>
+<body>
+ <img th:src="@{/images/logo.jpg}"/>
+<div align="center">
+    <h1>User Registration</h1>
+    <form action="#" th:action="@{/api/public/auth/signup}" method="post" th:object="${user}">
+        <label>Full name:</label>
+        <input type="text" th:field="*{username}" /><br/>
+ 
+        <label>E-mail:</label>
+        <input type="text" th:field="*{email}" /><br/>
+ 
+        <label>Password:</label>
+        <input type="password" th:field="*{password}" /><br/>
+ 
+        <label>Tipo Utente:</label>
+        <select th:field="*{role}">
+            <option th:each="p : ${listProfession}" th:value="${p}" th:text="${p}" />
+        </select>
+        <br/>
+ 
+        <button type="submit">Register</button>    
+    </form>
+</div>
+</body>
+</html>

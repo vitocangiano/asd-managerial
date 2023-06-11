@@ -1,0 +1,41 @@
+{
+	"info": {
+		"_postman_id": "baf009f8-4df1-4adb-b18d-bb9a43f24e96",
+		"name": "Authentication",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "New User",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"admin\",\r\n    \"email\":\"paol@fasullo.it\",\r\n    \"role\":[\r\n        \"Admin\"\r\n    ],\r\n    \"password\":\"password\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/public/auth/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"public",
+						"auth",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
